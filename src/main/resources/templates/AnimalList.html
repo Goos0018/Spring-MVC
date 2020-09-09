@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring MVC</title>
+</head>
+
+<body>
+<h2>ZooAnimals</h2>
+
+<table border="1">
+    <tr>
+        <th>Animal Type</th>
+        <th>Name</th>
+        <th>Food Type</th>
+        <th>Food</th>
+    </tr>
+    <tr th:each="animal : ${animals}">
+        <td th:text="${{animal.animalType}}">animal type</td>
+        <td th:text="${{animal.name}}">name</td>
+        <td th:text="${{animal.foodType}}">food type</td>
+        <td th:text="${{animal.food}}">food</td>
+        <!--<td> <a type="button" th:href="@{/Animal/{name}/editAnimal(name=${animal.name})}">edit</a></td>
+        <td> <a type="button" th:href="@{/Animal/{name}/deleteAnimal(name=${animal.name})}">del</a></td>
+-->    </tr>
+</table>
+
+</body>
+</html>

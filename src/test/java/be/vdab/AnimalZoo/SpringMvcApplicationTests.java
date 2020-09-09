@@ -1,4 +1,4 @@
-package be.vdab.springmvc;
+package be.vdab.AnimalZoo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
