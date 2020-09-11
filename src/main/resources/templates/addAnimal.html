@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+</html><html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Spring MVC</title>
+    <!-- Bootstrap CSS file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
+
 <body>
-<h1>Hello Browser</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Zoo App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{/animal/getAllAnimals}">Show all animals</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{/animal/addAnimal}">add animal</a>
+            </li>
+        </ul>
+    </div>
+    <hr>
+</nav>
+
+Witch animal do you like to add?
+
+<form action="/Animal/addAnimal" method="post">
+     <br/>
+    <label>name</label> <input type="text" name="name"><br/>
+    <label>species</label><input type="text" name="species"><br/>
+    <label>foodType</label><select name="foodtype">
+        <option disabled selected>--select--</option>
+        <option value="Herbivore">Herbivore</option>
+        <option value="Carnivore">Carnivore</option>
+    <option value="Omnivore">Omnivore</option></select><br>
+    <label>food</label> <input type="text" name="food"><br/>
+    <input type="submit">
+</form>
+
+</body>
+</html>
+<!-- JS files: jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>

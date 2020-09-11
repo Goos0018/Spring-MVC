@@ -10,7 +10,8 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Zoo App</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -29,31 +30,10 @@
     <hr>
 </nav>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-6">
-            <table border="1">
-                <tr>
-                    <th width="20%">Animal Type</th>
-                    <th width="20%">Name</th>
-                    <th width="20%">Food Type</th>
-                    <th width="20%">Food</th>
-                    <th width="20%">Action</th>
-                </tr>
-                <tr th:each="animal : ${animals}">
-                    <td th:text="${{animal.animalType}}">animal type</td>
-                    <td th:text="${{animal.name}}">name</td>
-                    <td th:text="${{animal.foodType}}">food type</td>
-                    <td th:text="${{animal.food}}">food</td>
-                    <td>
-                        <!--<a class="btn btn-secondary" type="button" th:href="@{/animal/{name}/edit(name=${animal.name})}">edit</a>
-                        -->
-                        <a class="btn btn-danger" type="button"
-                           th:href="@{/animal/{name}/delete(id=${animal.name})}">delete</a>
-                    </td>
-                </tr>
-             </table>
-        </div>
+<div class="container">
+    <br>
+    <div class="row" border="4">
+        <img src="zoo.jpg" width="100%" height="auto" align="center" alt="zoo.jpg">
     </div>
 </div>
 

@@ -18,14 +18,14 @@ public class AnimalController {
     public ModelAndView getAllEmployees(ModelMap model) {
         model.addAttribute("animals", animalService.getAllAnimals());
 
-        return new ModelAndView("employeeListDisplay", model);
+        return new ModelAndView("AnimalList", model);
     }
 
-    @RequestMapping(value="/listAnimals", method= RequestMethod.GET)
+    @RequestMapping(value="/AnimalList", method= RequestMethod.GET)
     public ModelAndView listAnimals(ModelMap model){
         model.addAttribute("animals", animalService.getAllAnimals());
 
-        return new ModelAndView("listAnimals", model);
+        return new ModelAndView("AnimalList", model);
     }
 
     @RequestMapping(value="/addAnimal",method=RequestMethod.GET)
@@ -36,13 +36,13 @@ public class AnimalController {
     @RequestMapping(value="/addAnimal",method=RequestMethod.POST)
     public  ModelAndView addAnimal(@ModelAttribute Animal animal, ModelMap model){
         animalService.addAnimal(animal);
-        return new ModelAndView("redirect:/Animal/listAnimals");
+        return new ModelAndView("redirect:/Animal/AnimalList");
     }
 
     @RequestMapping(value="/{name}/deleteAnimal",method=RequestMethod.GET)
     public ModelAndView deleteAnimal(@PathVariable("name") String name, ModelMap model){
         animalService.deleteAnimalByName(name);
-        return new ModelAndView("redirect:/Animal/listAnimals");
+        return new ModelAndView("redirect:/Animal/AnimalList");
     }
 
   /*  @RequestMapping(value="/{name}/editAnimal",method=RequestMethod.GET)
